@@ -25,28 +25,26 @@ OpenWeatherMap API → Python ETL → Apache Airflow → Snowflake
 
 ## 📁 Project Structure
 
+```
 weather_pipeline/
-│
 ├── airflow/
 │   └── dags/
-│     └── weather_dag.py        # Airflow DAG — orchestrates ETL hourly
-│
-├── notebooks/                   # Your Databricks notebooks
-│   └── weather_etl.py
-│
-├── scripts/                     # Reusable Python functions
-│   ├── extract.py               # Pulls data from OpenWeatherMap API
-│   ├── transform.py             # Cleans and structures raw data
-│   └── load.py
-│
-├── config/
-│   └── config.py                # API keys, credentials (never push to GitHub!)
-│
-├── .env                         # Environment variables
-├── .gitignore                   # Ignore .env and sensitive files
-├── requirements.txt             # Python dependencies
-├── test_pipeline.py             # Manual end-to-end test script
+│       └── weather_dag.py          # Airflow DAG — orchestrates ETL hourly
+├── notebooks/
+│   └── weather_etl_databricks.py   # Databricks notebook version
+├── scripts/
+│   ├── __init__.py
+│   ├── extract.py                  # Pulls data from OpenWeatherMap API
+│   ├── transform.py                # Cleans and structures raw data
+│   └── load.py                     # Loads data into Snowflake
+├── snowflake/
+│   └── weather_table.sql           # Snowflake table setup script
+├── .env.example                    # Credentials template
+├── .gitignore                      # Ignores .env and sensitive files
+├── requirements.txt                # Python dependencies
+├── test_pipeline.py                # Manual end-to-end test script
 └── README.md
+```
 
 ---
 
