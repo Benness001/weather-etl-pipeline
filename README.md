@@ -8,7 +8,7 @@ Snowflake — orchestrated hourly with Apache Airflow.
 
 ##  Architecture
 OpenWeatherMap API → Python ETL → Apache Airflow → Snowflake
-
+![Lagos Weather ETL Pipeline Architecture](images/lagos_weather_etl_pipeline_architecture.png)
 ---
 
 ## 🛠️ Tech Stack
